@@ -1,0 +1,17 @@
+Sub Macro4()
+'
+' Macro4 Macro
+'
+
+'
+Dim rng1 As Range, cell1 As Range ' rng1 is the cells we need to add comments in
+Set rng1 = Range("C16:C106")
+    
+  For Each cell1 In rng1
+    cell1.AddComment
+    cell1.Select
+    cell1.Comment.Text Text:= _
+        "Tensing Duraisingam:" & Chr(10) & ActiveCell.Offset(, 1).Text ' adds text from nearby cell right of rng1 as comment in rng1 cells
+  Next cell1
+  
+End Sub
